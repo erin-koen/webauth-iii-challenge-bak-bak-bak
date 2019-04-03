@@ -3,6 +3,9 @@ const helmet = require("helmet");
 const cors = require("cors");
 
 //bring in routes
+const authRoute = require("./Data/Routes/authRoute.js");
+const userRoute = require("./Data/Routes/userRoute.js")
+
 
 //declare server
 const server = express();
@@ -13,7 +16,7 @@ server.use(express.json());
 server.use(cors());
 
 //assign routes
-server.use("/api/auth/login", authRoute);
+server.use("/api/auth", authRoute);
 server.use("/api/users", userRoute);
 
 // root route

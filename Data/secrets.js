@@ -1,0 +1,1 @@
+module.exports = "i am too lazy to do the dot env right nwo"
