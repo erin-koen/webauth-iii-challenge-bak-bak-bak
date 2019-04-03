@@ -3,7 +3,7 @@ const bcrypt = require("bcryptjs");
 const db = require("../dbConfig.js");
 const Users = require("../Helpers/usersHelper.js");
 const jwt = require("jsonwebtoken");
-const secret = require("../secrets.js")
+const secretPhrase = require("../secrets.js")
 
 router.post("/register", async (req, res) => {
   const user = req.body;
@@ -59,11 +59,11 @@ const generateToken = user => {
     username: user.username,
     department: user.department
   };
-  const secret = "i do not feel like using dot env";
+  const secret = secretPhrase;
   const options = {
     expiresIn: "1d"
   };
   return jwt.sign(payload, secret, options);
-};
+};  
 
 module.exports = router;
