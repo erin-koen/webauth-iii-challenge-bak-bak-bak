@@ -1,9 +1,9 @@
 const router = require("express").Router();
 const bcrypt = require("bcryptjs");
-const db = require("../dbConfig.js");
-const Users = require("../Helpers/usersHelper.js");
 const jwt = require("jsonwebtoken");
-const secretPhrase = require("../secrets.js")
+
+const Users = require("../Helpers/usersHelper.js");
+const secretPhrase = require("../secrets.js");
 
 router.post("/register", async (req, res) => {
   const user = req.body;
@@ -64,6 +64,6 @@ const generateToken = user => {
     expiresIn: "1d"
   };
   return jwt.sign(payload, secret, options);
-};  
+};
 
 module.exports = router;
