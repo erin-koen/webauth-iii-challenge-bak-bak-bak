@@ -29,6 +29,7 @@ This project has two parts, you will work on it over two days in the full time c
 
 #### Endpoints
 
+
 | Method | Endpoint      | Description                                                                                                                                                                                                                                                                       |
 | ------ | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | POST   | /api/register | Creates a `user` using the information sent inside the `body` of the request. **Hash the password** before saving the user to the database.                                                                                                                                       |
